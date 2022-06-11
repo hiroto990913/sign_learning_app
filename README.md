@@ -10,4 +10,10 @@ Roboflow社が提供するPublic datasetsの「American Sign Language Letters Da
 白黒にしたり反転したりする拡張機能がランダムに適応された画像をデータとして用いました。
 https://public.roboflow.com/object-detection/american-sign-language-letters 
 
+## モデルと精度について
+モデルはImageNetで学習させたVGG16を手話の画像データを学習させたモデルを用いています。
+精度は交差検証法でAccuracy Scoreを算出した結果0.8912と高い精度で認識できていることがわかりました。
+
 ## デモンストレーション
+https://user-images.githubusercontent.com/67566912/173194196-b39dc758-1817-49bc-8cd9-0adfe84496c6.mp4
+
