@@ -1,0 +1,27 @@
+{% extends 'syuwa/base.html' %}
+{% block title %} 手話クイズアプリ {% endblock %}
+{% block content %}
+<div>
+    <table class="table">
+        <h4 class="mt-4 mb-5 border-bottom">手話クイズ</h4>
+        
+        <tbody>
+                <tr>
+                    <td><h4>問題</h4></td>
+                    <td><img class="rounded" src= {{ photo_data }} width="200" height="200"></img></td>
+                </tr>
+                <form action="{% url 'syuwa:answer' %}"  enctype= "multipart/form-data" method="POST">
+                <tr>
+                    <td colspan="2">{{ form }}</td> 
+                    {% csrf_token %}
+                </tr> 
+                <tr>
+                    <td> </td>
+                    <td colspan="2"><button type="submit" class="btn btn-primary">送信</button></td>
+                </tr>        
+                </form>
+            
+        </tbody>
+    </table>
+</div>
+{% endblock %}

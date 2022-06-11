@@ -1,0 +1,29 @@
+{% extends 'syuwa/base.html' %}
+{% block title %} 手話クイズアプリ {% endblock %}
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom">手話クイズ結果</h4>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>画像ファイル</td>
+                
+                <td><img src="/media/photos/photo.jpg" width="200" height="200" ></img></td>
+            </tr>
+            <tr>
+                <td>解答</td>
+                <td>{{ predicted }}</td>
+            </tr>
+            <tr>
+                <td>あなたの回答</td>
+                <td>{{ answer }}</td>
+            </tr>
+            <tr>
+                <td>判定</td>
+                <td>{{ hyouzi }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'syuwa:index' %}" class="btn btn-primary">画像選択メニューに戻る</a>
+</div>
+{% endblock %}

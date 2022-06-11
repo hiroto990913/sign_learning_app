@@ -1,0 +1,21 @@
+{% extends 'syuwa/base.html' %}
+{% block title %} 手話クイズアプリ入門編 {% endblock %}
+
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom">アルファベットの手話を勉強してみよう！</h4>
+    <p>画像ファイルを選択して開始ボタンをクリックして下さい。(ZとJは動きの中での写真を選択してください。)</p>
+    <form action="{% url 'syuwa:gazou' %}" method="post" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="custom-file">
+            {{ form.image }}
+            <label class="custom-file-label" for="customFile">
+                    問題となる画像を選択してください。
+            </label>
+        </div>
+    </div>
+    <div class="text-right"><button type="submit" class="btn btn-primary">問題を出す！</button></div>
+    </form>
+</div>
+{% endblock %}
