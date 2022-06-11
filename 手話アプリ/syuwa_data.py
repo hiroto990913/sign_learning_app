@@ -11,7 +11,7 @@ from sklearn.model_selection import KFold
 
 from tensorflow.keras.applications import VGG16
 
-train_dir = 'train1'
+train_dir = 'train'
 
 Name=[]
 for file in os.listdir(train_dir):
@@ -32,7 +32,7 @@ reverse_mapping=dict(zip(N,Name))
 def mapper(value):
     return reverse_mapping[value]
 
-#トレインセットの画像の読み込み
+#trainセットの画像の読み込み
 dataset=[]
 count=0
 for file in os.listdir(train_dir):
@@ -62,8 +62,7 @@ print(y_tra.shape)
 print(y_test.shape)
 
 
-"""
 xy = (X_tra, X_test, y_tra, y_test)
 np.save("./imagefiles_syuwa_224.npy", xy)
-"""
+
 
