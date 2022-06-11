@@ -13,8 +13,8 @@ from tensorflow.keras.applications import VGG16
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.model_selection import KFold
 
-train_dir = 'train1'
-test_dir = 'test1'
+train_dir = 'train'
+test_dir = 'test'
 
 Name=[]
 for file in os.listdir(train_dir):
@@ -80,7 +80,7 @@ for layer in model.layers[:15]:
     layer.trainable = False
 model.summary()
 
-'''
+
 opt = Adam(lr=0.0001)
 model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
 
@@ -89,4 +89,4 @@ model.fit(X_train, y_train, batch_size=32, epochs=15,validation_data=(X_test,y_t
 model.save("./aiapps/syuwa/ml_models/vgg16_transfer.h5")
 
 score = model.evaluate(test, labels, batch_size=32)
-'''
+
